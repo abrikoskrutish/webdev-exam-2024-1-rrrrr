@@ -9,18 +9,19 @@
 <body>
     <header>
         <div class="flex-header">
-            <div>
-                <p>Logo</p>
+            <div class="div-logowave">
+                <img class="logowave" src="images/logowave.png" alt="logowave">
             </div>
-            <div>
-                <p>Find dish</p>
+            <div class="flex-find-line">
+                <input type="text" placeholder="Введите запрос">
+                <button>Найти</button>
             </div>
             <div class="header-button">
-                <div>
-                    <p>Корзина</p>
+                <div class="flex-shpipbasket">
+                    <img class="shipbasket" src="images/shipbasket.png" alt="shipbasket">
                 </div>
-                <div>
-                    <p>Личный кабинет</p>
+                <div class="flex-headercabinet">
+                    <img class="headercabinet" src="images/headercabinet.png" alt="headercabinet">
                 </div>
             </div>
         </div>
@@ -32,16 +33,28 @@
         <div class="main-container">
             <div class="category-filter">
                 <p>Категории</p>
-                <input type="checkbox" id="category-fisrt" name="category-fisrt">
-                <label for="category-fisrt">Категория 1</label>
-                <input type="checkbox" id="category-second" name="category-second">
-                <label for="category-second">Категория 2</label>
-                <input type="checkbox" id="category-three" name="category-three">
-                <label for="category-three">Категория 3</label>
-                <input type="checkbox" id="category-four" name="category-four">
-                <label for="category-four">Категория 4</label>
-                <input type="checkbox" id="category-five" name="category-five">
-                <label for="category-five">Категория 5</label>
+                <div class="flex-category-checkbox">
+                    <div>
+                        <input type="checkbox" id="category-fisrt" name="category-fisrt">
+                        <label for="category-fisrt">Категория 1</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="category-second" name="category-second">
+                        <label for="category-second">Категория 2</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="category-three" name="category-three">
+                        <label for="category-three">Категория 3</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="category-four" name="category-four">
+                        <label for="category-four">Категория 4</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="category-five" name="category-five">
+                        <label for="category-five">Категория 5</label>
+                    </div>
+                </div>
 
                 <p>Стоимость</p>
                 <div class="flex-category-cost">
@@ -55,13 +68,17 @@
                     </div>
                 </div>
 
-                <input type="checkbox" id="product-sale" name="product-sale">
-                <label for="product-sale">Только товары со скидками</label>
+                <div>
+                    <input type="checkbox" id="product-sale" name="product-sale">
+                    <label for="product-sale">Только товары со скидками</label>
+                </div>
 
-                <button>Применить</button>
+                <div class="flex-button">
+                    <button>Применить</button>
+                </div>
             </div>
             <div>
-                <div>
+                <div class="flex-header-catalog">
                     <p>Каталог</p>
                     <select name="ff" id="ff">
                         <option value="a">По убыванию рейтинга</option>
