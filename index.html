@@ -3,9 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <div class="flex-header">
+            <div>
+                <p>Logo</p>
+            </div>
+            <div>
+                <p>Find dish</p>
+            </div>
+            <div class="header-button">
+                <div>
+                    <p>Корзина</p>
+                </div>
+                <div>
+                    <p>Личный кабинет</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="notification">
+            <p>Уведомление</p>
+        </div>
+        <div class="main-container">
+            <div class="category-filter">
+                <p>Категории</p>
+                <input type="checkbox" id="category-fisrt" name="category-fisrt">
+                <label for="category-fisrt">Категория 1</label>
+                <input type="checkbox" id="category-second" name="category-second">
+                <label for="category-second">Категория 2</label>
+                <input type="checkbox" id="category-three" name="category-three">
+                <label for="category-three">Категория 3</label>
+                <input type="checkbox" id="category-four" name="category-four">
+                <label for="category-four">Категория 4</label>
+                <input type="checkbox" id="category-five" name="category-five">
+                <label for="category-five">Категория 5</label>
+
+                <p>Стоимость</p>
+                <div class="flex-category-cost">
+                    <div>
+                        <label for="category-cost-min">От</label>
+                        <input type="number" id="category-cost-min">
+                    </div>
+                    <div>
+                        <label for="category-cost-max">До</label>
+                        <input type="number" id="category-cost-max">
+                    </div>
+                </div>
+
+                <input type="checkbox" id="product-sale" name="product-sale">
+                <label for="product-sale">Только товары со скидками</label>
+
+                <button>Применить</button>
+            </div>
+            <div>
+                <div>
+                    <p>Каталог</p>
+                    <select name="ff" id="ff">
+                        <option value="a">По убыванию рейтинга</option>
+                        <option value="a">По возрастанию рейтинга</option>
+                    </select>
+                </div>
+
+                <div>
+                    <p>Карточки</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&#9400; 2025 Рожкофф</p>
+    </footer>
 </body>
 </html>
