@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 /* футер внизу */
 html {
     height: 100%;
@@ -8,6 +12,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    font-family: "Gabriela", serif;
+    font-style: normal;
 }
 
 header {
@@ -21,16 +27,11 @@ main {
 
 footer {
     flex: 0 0 auto;
-    border-top: 1px solid black;
+    border-top: 1px solid gray;
 }
 
 footer p {
     text-align: center;
-}
-
-/* div цветной чтобы правильно разместить обьекты */
-div {
-    border: 1px solid blue;
 }
 
 /* шапка */
@@ -38,6 +39,7 @@ div {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    border-bottom: 1px solid gray;
 }
 
 /* лого */
@@ -93,6 +95,8 @@ div {
 /* main */
 .notification {
     display: none;
+    background-color: rgb(162, 219, 249);
+    border: 1px solid rgb(105, 105, 255);
 }
 
 .main-container {
@@ -105,7 +109,10 @@ div {
 .category-filter {
     display: flex;
     flex-direction: column;
+    border-right: 1px solid gray;
+    margin: 0px 10px;
 }
+
 
 .flex-category-checkbox {
     display: flex;
@@ -136,9 +143,52 @@ div {
 
 
 /* каталог */
+
 .flex-header-catalog {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0px 20px;
+}
+
+
+.self-catalog {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    gap: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 30px;
+    margin: 10px 0px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+}
+
+.img-card {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card p {
+    margin: 0px;
+}
+
+@media only screen and (max-width:800px) {
+    .self-catalog {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        justify-items: center;
+        gap: 30px;
+    }
+
+    .flex-find-line input {
+        width: 200px;
+    }
 }

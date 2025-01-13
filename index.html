@@ -1,99 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <div class="flex-header">
-            <div class="div-logowave">
-                <img class="logowave" src="images/logowave.png" alt="logowave">
-            </div>
-            <div class="flex-find-line">
-                <input type="text" placeholder="Введите запрос">
-                <button>Найти</button>
-            </div>
-            <div class="header-button">
-                <div class="flex-shpipbasket">
-                    <img class="shipbasket" src="images/shipbasket.png" alt="shipbasket">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Главная страница</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="flex-header">
+                <div class="div-logowave">
+                    <img class="logowave" src="images/logowave.png" alt="logowave">
                 </div>
-                <div class="flex-headercabinet">
-                    <img class="headercabinet" src="images/headercabinet.png" alt="headercabinet">
+                <div class="flex-find-line">
+                    <input type="text" placeholder="Введите запрос">
+                    <button>Найти</button>
                 </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <div class="notification">
-            <p>Уведомление</p>
-        </div>
-        <div class="main-container">
-            <div class="category-filter">
-                <p>Категории</p>
-                <div class="flex-category-checkbox">
-                    <div>
-                        <input type="checkbox" id="category-fisrt" name="category-fisrt">
-                        <label for="category-fisrt">Категория 1</label>
+                <div class="header-button">
+                    <div class="flex-shpipbasket">
+                        <a href="order.html"><img class="shipbasket" src="images/shipbasket.png" alt="shipbasket"></a>
+                        
                     </div>
-                    <div>
-                        <input type="checkbox" id="category-second" name="category-second">
-                        <label for="category-second">Категория 2</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="category-three" name="category-three">
-                        <label for="category-three">Категория 3</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="category-four" name="category-four">
-                        <label for="category-four">Категория 4</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="category-five" name="category-five">
-                        <label for="category-five">Категория 5</label>
+                    <div class="flex-headercabinet">
+                        <a href="account.html"><img class="headercabinet" src="images/headercabinet.png" alt="headercabinet"></a>
                     </div>
                 </div>
+            </div>
+        </header>
+        <main>
+            <div class="notification">
+                <p>Уведомление</p>
+            </div>
+            <div class="main-container">
+                <div class="category-filter">
+                    <form method="POST" action="https://httpbin.org/post">
+                        <h3>Категории</h3>
+                        <div class="flex-category-checkbox">
+                            <div>
+                                <input type="checkbox" id="category-fisrt" value="yes" name="category-fisrt">
+                                <label for="category-fisrt">Категория 1</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="category-second" value="yes" name="category-second">
+                                <label for="category-second">Категория 2</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="category-three" value="yes" name="category-three">
+                                <label for="category-three">Категория 3</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="category-four" value="yes" name="category-four">
+                                <label for="category-four">Категория 4</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="category-five" value="yes" name="category-five">
+                                <label for="category-five">Категория 5</label>
+                            </div>
+                        </div>
+    
+                        <h3>Стоимость</h3>
+                        <div class="flex-category-cost">
+                            <div>
+                                <label for="category-cost-min">От</label>
+                                <input type="number" name="category-cost-min" id="category-cost-min" placeholder="100">
+                            </div>
+                            <div>
+                                <label for="category-cost-max">До</label>
+                                <input type="number" name="category-cost-max" id="category-cost-max" placeholder="5000">
+                            </div>
+                        </div>
+    
+                        <div>
+                            <input type="checkbox" id="product-sale" value="yes" name="product-sale">
+                            <label for="product-sale">Только товары со скидками</label>
+                        </div>
+    
+                        <div class="flex-button">
+                            <button type="submit">Применить</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="catalog">
+                    <div class="flex-header-catalog">
+                        <h1>Каталог</h1>
+                        <select name="sort" id="sort">
+                            <option value="">По убыванию рейтинга</option>
+                            <option value="increase-rating">По возрастанию рейтинга</option>
+                            <option value="decreasing-price">По убыванию цены</option>
+                            <option value="increase-price">По возрастанию цены</option>
+                        </select>
+                    </div>
 
-                <p>Стоимость</p>
-                <div class="flex-category-cost">
-                    <div>
-                        <label for="category-cost-min">От</label>
-                        <input type="number" id="category-cost-min">
+                    <div class="self-catalog">
+                        <div class="card">
+                            <img class="img-card" src="images/anchor.png" alt="anchor">
+                            <p>Якорь</p>
+                            <p>3,4</p>
+                            <p>6999&#8381;</p>
+                            <button>Добавить</button>
+                        </div>
+                        <div class="card">
+                            <img class="img-card" src="images/anchor.png" alt="anchor">
+                            <p>Якорь</p>
+                            <p>3,4</p>
+                            <p>6999&#8381;</p>
+                            <button>Добавить</button>
+                        </div>
+                        <div class="card">
+                            <img class="img-card" src="images/anchor.png" alt="anchor">
+                            <p>Якорь</p>
+                            <p>3,4</p>
+                            <p>6999&#8381;</p>
+                            <button>Добавить</button>
+                        </div>
+                        <div class="card">
+                            <img class="img-card" src="images/anchor.png" alt="anchor">
+                            <p>Якорь</p>
+                            <p>3,4</p>
+                            <p>6999&#8381;</p>
+                            <button>Добавить</button>
+                        </div>
+                        <div class="card">
+                            <img class="img-card" src="images/anchor.png" alt="anchor">
+                            <p>Якорь</p>
+                            <p>3,4</p>
+                            <p>6999&#8381;</p>
+                            <button>Добавить</button>
+                        </div>
+                        <div class="card">
+                            <img class="img-card" src="images/anchor.png" alt="anchor">
+                            <p>Якорь</p>
+                            <p>3,4</p>
+                            <p>6999&#8381;</p>
+                            <button>Добавить</button>
+                        </div>
                     </div>
-                    <div>
-                        <label for="category-cost-max">До</label>
-                        <input type="number" id="category-cost-max">
-                    </div>
-                </div>
-
-                <div>
-                    <input type="checkbox" id="product-sale" name="product-sale">
-                    <label for="product-sale">Только товары со скидками</label>
-                </div>
-
-                <div class="flex-button">
-                    <button>Применить</button>
                 </div>
             </div>
-            <div>
-                <div class="flex-header-catalog">
-                    <p>Каталог</p>
-                    <select name="ff" id="ff">
-                        <option value="a">По убыванию рейтинга</option>
-                        <option value="a">По возрастанию рейтинга</option>
-                    </select>
-                </div>
-
-                <div>
-                    <p>Карточки</p>
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <p>&#9400; 2025 Рожкофф</p>
-    </footer>
-</body>
+        </main>
+        <footer>
+            <p>&#9400; 2025 Рожкофф</p>
+        </footer>
+    </body>
 </html>
