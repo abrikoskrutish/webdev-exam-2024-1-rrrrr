@@ -1,7 +1,47 @@
-h1 {
+h2 {
     margin-left: 25px;
 }
 
-div {
-    border: 1px solid blue;
+
+
+/* форма */
+
+.grid-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-items: start;
+}
+
+.part-form, .end-cost {
+    margin: 10px;
+}
+
+.part-form > label {
+    display: block;
+}
+
+.part-form > input,select  {
+    width: 400px;
+}
+
+.end-cost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+}
+
+.cost-delivery {
+    margin-top: 0px;
+    font-size: 12px;
+}
+
+@media only screen and (max-width:855px){
+    .grid-form {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
 }

@@ -22,7 +22,7 @@
                 </div>
                 <div class="header-button">
                     <div class="flex-shpipbasket">
-                        <img class="shipbasket" src="images/shipbasket.png" alt="shipbasket">
+                        <a href="index.html"><img class="menuicon" src="images/menuicon.png" alt="menuicon"></a>
                     </div>
                     <div class="flex-headercabinet">
                         <a href="account.html"><img class="headercabinet" src="images/headercabinet.png" alt="headercabinet"></a>
@@ -34,13 +34,59 @@
             <div class="notification">
                 <p>Уведомление</p>
             </div>
-            <h1>Корзина</h1>
+            <h2>Корзина</h2>
             <div>
-                Карточки
             </div>
-            <div>
-                Форма
-            </div>
+            <h2>Оформление заказа</h2>
+                <form method="POST" action="https://httpbin.org/post">
+                    <div class="grid-form">
+
+                        <div class="part-form">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" name="name" placeholder="Иванов Иван" required >
+                        </div>
+                        <div class="part-form">
+                            <label for="address">Адрес доставки</label>
+                            <input type="text" id="address" name="address" placeholder="ул. Большая Семёновская, 38" required>
+                        </div>
+                        <div class="part-form">
+                            <label for="phone">Номер телефона</label>
+                            <input type="text" id="phone" name="phone" placeholder="+74952230523" required>
+                        </div>
+                        <div class="part-form">
+                            <label for="date-address">Дата доставки</label>
+                            <input type="date" id="date-address" name="date-address" value="2025-01-11" required>
+                        </div>
+                        <div class="part-form">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="example@mospolytech.ru" required>
+                            <div class="part-form-checkbox">
+                                <input type="checkbox" id="mailing" name="mailing" value="yes" checked>
+                                <label for="mailing">Подписаться на рассылку</label>
+                            </div>
+                        </div>
+                        <div class="part-form">
+                            <label for="period">Временной интервал доставки</label>
+                            <select name="period" id="period">
+                                <option value="10:00-14:00">10:00-14:00</option>
+                                <option value="14:00-18:00">14:00-18:00</option>
+                                <option value="18:00-22:00">18:00-22:00</option>
+                            </select>
+                        </div>
+                        <div class="part-form">
+                            <label for="comment">Комментарий</label>
+                            <input type="textarea" id="comment" name="comment">
+                        </div>
+                        <div class="end-cost">
+                            <p>Итоговая стоимость: </p>
+                            <p class="cost-delivery">(стоимость доставки 500 &#8381;)</p>
+                            <div>
+                                <button type="reset">Сбросить</button>
+                                <button type="submit">Оформить</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
         </main>
         <footer>
             <p>&#9400; 2025 Рожкофф</p>
