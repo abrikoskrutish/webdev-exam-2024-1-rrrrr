@@ -34,28 +34,28 @@
             <div class="notification">
                 <p>Уведомление</p>
             </div>
-            <h2>Корзина</h2>
+            <h1>Корзина</h1>
             <div class="self-catalog">
             </div>
             <h2>Оформление заказа</h2>
                 <form method="POST" action="https://httpbin.org/post">
-                    <div class="grid-form">
+                    <div class="order-form">
 
                         <div class="part-form">
-                            <label for="name">Имя</label>
-                            <input type="text" id="name" name="name" placeholder="Иванов Иван" required >
+                            <label for="full_name">Имя</label>
+                            <input type="text" id="full_name" name="full_name" placeholder="Иванов Иван" required >
                         </div>
                         <div class="part-form">
-                            <label for="address">Адрес доставки</label>
-                            <input type="text" id="address" name="address" placeholder="ул. Большая Семёновская, 38" required>
+                            <label for="delivery_address">Адрес доставки</label>
+                            <input type="text" id="delivery_address" name="delivery_address" placeholder="ул. Большая Семёновская, 38" required>
                         </div>
                         <div class="part-form">
                             <label for="phone">Номер телефона</label>
                             <input type="text" id="phone" name="phone" placeholder="+74952230523" required>
                         </div>
                         <div class="part-form">
-                            <label for="date-address">Дата доставки</label>
-                            <input type="date" id="date-address" name="date-address" value="2025-01-11" required>
+                            <label for="delivery_date">Дата доставки</label>
+                            <input type="date" id="delivery_date" name="delivery_date" value="2025-01-16" required>
                         </div>
                         <div class="part-form">
                             <label for="email">Email</label>
@@ -66,9 +66,10 @@
                             </div>
                         </div>
                         <div class="part-form">
-                            <label for="period">Временной интервал доставки</label>
-                            <select name="period" id="period">
-                                <option value="10:00-14:00">10:00-14:00</option>
+                            <label for="delivery_interval">Временной интервал доставки</label>
+                            <select name="delivery_interval" id="delivery_interval">
+                                <option value="08:00-12:00">08:00-12:00</option>
+                                <option value="12:00-14:00">12:00-14:00</option>
                                 <option value="14:00-18:00">14:00-18:00</option>
                                 <option value="18:00-22:00">18:00-22:00</option>
                             </select>

@@ -1,12 +1,7 @@
-h2 {
-    margin-left: 25px;
-}
-
-
 
 /* форма */
 
-.grid-form {
+.order-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -39,7 +34,7 @@ h2 {
 }
 
 @media only screen and (max-width:855px){
-    .grid-form {
+    .order-form {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
