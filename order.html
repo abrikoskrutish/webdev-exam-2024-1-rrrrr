@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Корзина</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="order.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,7 @@
             <div class="self-catalog">
             </div>
             <h2>Оформление заказа</h2>
-                <form method="POST" action="https://httpbin.org/post">
+                <form>
                     <div class="order-form">
 
                         <div class="part-form">
@@ -79,7 +79,7 @@
                             <input type="textarea" id="comment" name="comment">
                         </div>
                         <div class="end-cost">
-                            <p>Итоговая стоимость: </p>
+                            <div class="div-end-cost"></div>
                             <p class="cost-delivery">(стоимость доставки 500 &#8381;)</p>
                             <div>
                                 <button type="reset">Сбросить</button>

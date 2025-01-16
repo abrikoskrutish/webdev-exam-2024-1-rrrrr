@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Личный кабинет</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="account.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
@@ -25,7 +26,7 @@
                         
                     </div>
                     <div class="flex-headercabinet">
-                        <img class="menuicon" src="images/menuicon.png" alt="menuicon">
+                        <a href="index.html"><img class="menuicon" src="images/menuicon.png" alt="menuicon"></a>
                     </div>
                 </div>
             </div>
@@ -43,6 +44,14 @@
         <footer>
             <p>&#9400; 2025 Рожкофф</p>
         </footer>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modal-details"></div>
+            </div>
+        </div>
+
         <script src="accountOrders.js"></script>
     </body>
 </html>

@@ -16,8 +16,9 @@
                     <img class="logowave" src="images/logowave.png" alt="logowave">
                 </div>
                 <div class="flex-find-line">
-                    <input type="text" placeholder="Введите запрос">
-                    <button>Найти</button>
+                    <input type="text" id="search-input" placeholder="Введите запрос">
+                    <button id="search-button">Найти</button>
+                    <button id="cancel-button">Отмена</button>
                 </div>
                 <div class="header-button">
                     <div class="flex-shpipbasket">
@@ -83,6 +84,7 @@
                         </div>
                     </form>
                 </div>
+                <button id="toggle-categories" class="toggle-categories">Показать категории</button>
                 <div class="catalog">
                     <div class="flex-header-catalog">
                         <h1>Каталог</h1>
@@ -103,5 +105,6 @@
             <p>&#9400; 2025 Рожкофф</p>
         </footer>
         <script src="printProduct.js"></script>
+        <script src="taskFind.js"></script>
     </body>
 </html>

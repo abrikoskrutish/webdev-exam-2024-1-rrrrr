@@ -1,4 +1,6 @@
-
+h2 {
+    margin-left: 25px;
+}
 /* форма */
 
 .order-form {
@@ -6,8 +8,10 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     align-items: center;
-    justify-items: start;
+    justify-items: center;
+    margin: 0px 15px;
 }
+
 
 .part-form, .end-cost {
     margin: 10px;
@@ -36,7 +40,21 @@
 @media only screen and (max-width:855px){
     .order-form {
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        grid-template-columns: 300px;
+        grid-template-rows: 50px;
+        justify-items: start;
+    }
+
+    .end-cost {
+        display: flex;
+        align-items: start;
+        max-width: 300px;
+    }
+
+}
+
+@media only screen and (max-width:450px){
+    .part-form > input,select  {
+        width: 200px;
     }
 }

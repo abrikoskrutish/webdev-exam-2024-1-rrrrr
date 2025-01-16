@@ -79,6 +79,7 @@ footer p {
 .shipbasket {
     width: 50px;
     height: auto;
+    padding-top: 2px;
 }
 
 .flex-headercabinet {
@@ -197,7 +198,31 @@ h1 {
     margin: 1px;
 }
 
+.no-orders {
+    margin-left: 5px;
+    text-align: center;
+    font-size: 20px;
+}
 
+/* task */
+.autocomplete-container {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.autocomplete-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autocomplete-item:hover {
+    background-color: #f0f0f0;
+}
 
 @media only screen and (max-width:1800px) {
     .self-catalog {
@@ -228,4 +253,43 @@ h1 {
     .flex-find-line input {
         width: 150px;
     }
+}
+
+@media (max-width: 650px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    
+    .category-filter {
+        display: none;
+        border-right: none;
+    }
+    .toggle-categories {
+        display: block;
+    }
+
+    .img-card {
+        width: 280px;
+        max-height: 400px;
+    }
+
+}
+
+.toggle-categories {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-categories.show {
+    display: block;
 }
