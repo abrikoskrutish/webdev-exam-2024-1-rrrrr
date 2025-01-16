@@ -60,6 +60,17 @@ function printProduct() {
         button.addEventListener("click", event => {
             const card = event.target.closest('.card');
             const productId = card.getAttribute('data-id');
+            const notificator = document.querySelector('.notification');
+            const notificatorText = document.querySelector('.notification p');
+            
+            notificator.style.display = 'block';
+            notificator.style.backgroundColor = 'rgb(121, 234, 115)';
+            notificator.style.border = '1px solid rgb(79, 155, 75)';
+            notificator.style.position = 'sticky';
+            notificatorText.textContent = 'Товар добавлен в корзину!';
+            setTimeout(() => {
+                notificator.style.display = 'none';
+            }, 5000);
 
             card.style.border = '2px solid rgb(162, 219, 249)';
 

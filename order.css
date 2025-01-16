@@ -21,7 +21,7 @@ h2 {
     display: block;
 }
 
-.part-form > input,select  {
+.part-form > input,select,textarea {
     width: 400px;
 }
 
@@ -54,7 +54,7 @@ h2 {
 }
 
 @media only screen and (max-width:450px){
-    .part-form > input,select  {
+    .part-form > input,select,textarea {
         width: 200px;
     }
 }

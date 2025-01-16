@@ -19,7 +19,7 @@ td, th {
 
 
 .view-order {
-    background: url(images/telescope.png) 50% 50% no-repeat;;
+    background: url(images/tele.png) 50% 50% no-repeat;;
     background-size: contain;
     width: 25px;
     height: 25px;
@@ -29,7 +29,7 @@ td, th {
 }
 
 .edit-order {
-    background: url(images/pen.jpg) 50% 50% no-repeat;;
+    background: url(images/pen.png) 50% 50% no-repeat;;
     background-size: contain;
     width: 25px;
     height: 25px;
@@ -61,7 +61,7 @@ td, th {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; 
+    margin: 5% auto; 
     padding: 20px;
     border: 1px solid #888;
     width: 80%;

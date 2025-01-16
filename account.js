@@ -1,17 +1,13 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log('DOMContentLoaded event triggered');
     const ordersContainer = document.querySelector('#orders-container');
 
     if (!ordersContainer) {
-        console.error('Orders container not found');
         return;
     }
 
     try {
-        console.log('Fetching orders from server...');
         const response = await fetch('https://edu.std-900.ist.mospolytech.ru/exam-2024-1/api/orders?api_key=12fe1881-5f53-4b3b-83a6-1fd9222bdb19');
         const orders = await response.json();
-        console.log('Orders fetched:', orders);
 
         if (orders.length === 0) {
             ordersContainer.innerHTML = '<p class="no-orders">Нет заказов для отображения. Перейти к <a href="order.html">оформлению заказа</a></p>';
@@ -38,7 +34,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const tbody = document.createElement('tbody');
 
         for (const [index, order] of orders.entries()) {
-            console.log(`Processing order ${index + 1}:`, order);
             const tr = document.createElement('tr');
 
             const orderDate = new Date(order.created_at).toLocaleString('ru-RU', {
@@ -55,7 +50,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                     .then(response => response.json())
             );
             const goods = await Promise.all(goodsPromises);
-            console.log(`Goods for order ${index + 1}:`, goods);
             const goodsNamesLimited = goods.map(good => good.name.split(' ').slice(0, 3).join(' ')).join(', ');
             const totalPrice = goods.reduce((sum, good) => sum + good.actual_price, 0);
 
@@ -78,7 +72,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         table.appendChild(tbody);
         ordersContainer.appendChild(table);
-        console.log('Table appended to ordersContainer');
 
         // просмотр
         document.querySelectorAll('.view-order').forEach(button => {
@@ -162,7 +155,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                         });
 
                         if (response.ok) {
-                            alert('Заказ успешно удален!');
+                            const notificator = document.querySelector('.notification');
+                            const notificatorText = document.querySelector('.notification p');
+                            
+                            notificator.style.display = 'block';
+                            notificator.style.backgroundColor = 'rgb(121, 234, 115)';
+                            notificator.style.border = '1px solid rgb(79, 155, 75)';
+                            notificator.style.position = 'sticky';
+                            notificatorText.textContent = 'Заказ успешно удален!';
+                            setTimeout(() => {
+                                notificator.style.display = 'none';
+                            }, 10000);
                             modal.style.display = 'none';
                             window.location.reload();
                         } else {
@@ -170,7 +173,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                         }
                     } catch (error) {
                         console.error('Ошибка при удалении заказа:', error);
-                        alert('Произошла ошибка при удалении заказа. Попробуйте еще раз.');
                     }
                 });
             });

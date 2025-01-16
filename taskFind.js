@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryFilter = document.querySelector('.category-filter');
     let timeout = null;
 
-    // Создаем контейнер для автодополнения
+
     const autocompleteContainer = document.createElement('div');
     autocompleteContainer.className = 'autocomplete-container';
     document.body.appendChild(autocompleteContainer);
 
-    // Функция для отображения вариантов автодополнения
+
     const showAutocomplete = (suggestions) => {
         autocompleteContainer.innerHTML = '';
         if (Array.isArray(suggestions)) {
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Функция для получения вариантов автодополнения с сервера
+
     const fetchAutocomplete = async (query) => {
         try {
             const response = await fetch(`https://edu.std-900.ist.mospolytech.ru/exam-2024-1/api/autocomplete?query=${query}&api_key=12fe1881-5f53-4b3b-83a6-1fd9222bdb19`);
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Обработчик ввода в поле поиска
+
     searchInput.addEventListener('input', () => {
         clearTimeout(timeout);
         const query = searchInput.value.trim();
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Обработчик нажатия на кнопку "Найти"
+    // найти
     searchButton.addEventListener('click', async () => {
         const query = searchInput.value.trim();
         if (query.length > 0) {
@@ -76,8 +76,23 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p>${product.name}</p>
                             <p>${product.rating}</p>
                             <p>${product.actual_price}\u20BD</p>
+                            <button class="add-product" data-id="${product.id}">Добавить</button>
                         `;
                         catalog.appendChild(card);
+                    });
+                    // обработчик для добавить
+                    document.querySelectorAll('.add-product').forEach(button => {
+                        button.addEventListener('click', (event) => {
+                            const productId = event.target.getAttribute('data-id');
+                            let selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
+                            if (!selectedProducts.includes(productId)) {
+                                selectedProducts.push(productId);
+                                localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
+                                event.target.closest('.card').style.border = '2px solid rgb(162, 219, 249)';
+                            } else {
+                                event.target.closest('.card').style.border = '2px solid rgb(162, 219, 249)';
+                            }
+                        });
                     });
                 } else {
                     catalog.innerHTML = '<p>Нет товаров, соответствующих вашему запросу</p>';
@@ -88,14 +103,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Обработчик нажатия на кнопку "Отмена"
+    // отмена
     cancelButton.addEventListener('click', () => {
         searchInput.value = '';
         autocompleteContainer.style.display = 'none';
-        window.location.reload(); // Обновляем страницу для загрузки полного каталога
+        window.location.reload(); 
     });
 
-    // Скрытие автодополнения при клике вне его
+
     document.addEventListener('click', (event) => {
         if (!autocompleteContainer.contains(event.target) && event.target !== searchInput) {
             autocompleteContainer.style.display = 'none';
